@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+<app-leftside></app-leftside>
+<div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title float-left">Peoples</h4>
+
+                                    <ol class="breadcrumb float-right">
+                                        <li class="breadcrumb-item"><a href="#">Admin Panel</a></li>
+                                        <li class="breadcrumb-item active">All users</li>
+                                    </ol>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                      <input type="text" placeholder="Search..">
+                          <a routerLink="/people" routerLinkActive="active">  <button class="btn success" >All Users</button></a>
+                                        <button class="btn success" > New Users</button>
+                                        <button class="btn success" > Recently Active Users</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+
+                                    <div class="table-rep-plugin">
+                                        <div class="table-responsive" data-pattern="priority-columns" >
+                                            <table id="tech-companies-1" class="table  table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th data-priority="1">Name</th>
+                                                    <th data-priority="3">Email</th>
+                                                    <th data-priority="1">Mobile No.</th>
+                                                    <th data-priority="3">Created Time</th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr *ngFor="let user of newUser">
+                                                    <a [routerLink]="['/recentchat', user.mobile_number]"><th><span class="co-name">{{user.name}}</span></th></a>
+                                                    <td>{{user.email_id}}</td>
+                                                    <a [routerLink]="['/recentchat', user.mobile_number]"><td>{{user.mobile_number}}</td></a>
+                                                    <td>{{user.created_datetime}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    </tr> </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
